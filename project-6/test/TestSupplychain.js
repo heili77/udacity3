@@ -79,13 +79,17 @@ contract('SupplyChain', function(accounts) {
         const supplyChain = await SupplyChain.deployed()
         
         // Declare and Initialize a variable for event
-        
+        var eventEmitted = false
         
         // Watch the emitted event Processed()
-        
+        var event = supplyChain.Processed()
+        await event.watch((err, res) => {
+            eventEmitted = true
+        })
 
         // Mark an item as Processed by calling function processtItem()
-        
+        await supplyChain.process(upc, originFarmerID, originFarmName, originFarmInformation, originFarmLatitude, originFarmLongitude, productNotes)
+
 
         // Retrieve the just now saved item from blockchain by calling function fetchItem()
         
