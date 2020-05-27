@@ -1,14 +1,15 @@
-pragma solidity >0.4.24;
+pragma solidity ^0.4.24;
 
 // Import the library 'Roles'
 import "./Roles.sol";
+import "../coffeecore/Ownable.sol";
 
 // Define a contract 'RetailerRole' to manage this role - add, remove, check
-contract RetailerRole {
+contract RetailerRole is Ownable{
   using Roles for Roles.Role;
 
   // Define 2 events, one for Adding, and other for Removing
-  event RetailerAdded(address indexed account);
+  event RetailerAdded  (address indexed account);
   event RetailerRemoved(address indexed account);
 
   // Define a struct 'retailers' by inheriting from 'Roles' library, struct Role
@@ -31,7 +32,7 @@ contract RetailerRole {
   }
 
   // Define a function 'addRetailer' that adds this role
-  function addRetailer(address account) public onlyRetailer {
+  function addRetailer(address account) public onlyOwner {
     _addRetailer(account);
   }
 
