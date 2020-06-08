@@ -5,7 +5,7 @@ import "./Roles.sol";
 import "../coffeecore/Ownable.sol";
 
 // Define a contract 'FarmerRole' to manage this role - add, remove, check
-contract FarmerRole is Ownable{
+contract FarmerRole{
   using Roles for Roles.Role;
 
   // Define 2 events, one for Adding, and other for Removing

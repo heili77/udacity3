@@ -5,7 +5,7 @@ import "./Roles.sol";
 import "../coffeecore/Ownable.sol";
 
 // Define a contract 'DistributorRole' to manage this role - add, remove, check
-contract DistributorRole is Ownable{
+contract DistributorRole{
   using Roles for Roles.Role;
 
   // Define 2 events, one for Adding, and other for Removing

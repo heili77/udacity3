@@ -6,7 +6,7 @@ import "../coffeeaccesscontrol/DistributorRole.sol";
 import "../coffeeaccesscontrol/RetailerRole.sol";
 import "../coffeecore/Ownable.sol";
 // Define a contract 'Supplychain'
-contract SupplyChain is FarmerRole, DistributorRole, ConsumerRole, RetailerRole{
+contract SupplyChain  is Ownable, FarmerRole, DistributorRole, ConsumerRole, RetailerRole{
  // using FarmerRole for FarmerRole.onlyFarmer;
 
   // Define 'owner'
